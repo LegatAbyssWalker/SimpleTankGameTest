@@ -6,6 +6,7 @@
 
 #include "MoreInfo.h"
 #include "Enemy.h"
+#include "Coin.h"
 
 class Player {
 	private:
@@ -32,6 +33,7 @@ class Player {
 		sf::FloatRect getGlobalBounds();
 
 		bool collisionWithEnemy(Enemy* enemy);
+		bool collisionWithCoin(Coin* coin);
 };
 
 #endif

@@ -28,6 +28,7 @@ class Bullet {
 		void drawTo(sf::RenderWindow& window);
 		void fireBullet(int speed);
 		void setBulletPos(sf::Vector2<float> newPos);
+		void addNewBullet(std::string bulletFile, int xDivide, int yDivide, int parameter1, int parameter2);
 		sf::FloatRect getGlobalBounds();
 
 		bool collisionWithEnemy(Enemy* enemy);

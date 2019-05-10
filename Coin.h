@@ -11,8 +11,6 @@ class Coin {
 		sf::Texture texture;
 		sf::Sprite coin;
 
-		std::vector<Coin*> coinVector;
-
 
 	public:
 		//Constructors/Destructors

@@ -13,31 +13,44 @@
 #include "PlaySound.h"
 #include "Bullet.h"
 #include "Enemy.h"
+#include "Coin.h"
+#include "Animation.h"
+
+#include <list>
+#include <iostream>
+
 
 class Game {
 	private:
+		//SFML Variables
 		sf::RenderWindow window;
 		sf::Event sfEvent;
 
 		sf::Texture image;
 		sf::Sprite background;
 
-		const int playerSpeed = 2;
-		const int bulletSpeed = 5;
-		const int enemySpeed  = 1;
-		int framerateLimit = 120;
+		sf::Clock dtClock;
+		float timer;
 
-		bool isMovingLeft = false;
-		bool isMovingRight = false;
+
+		//Booleans and variables
+		const int playerSpeed = 2;
+		const int enemySpeed  = 1;
+		const int bulletSpeed = 5;
+
+		unsigned int framerateLimit = 120;
+		unsigned int bulletCount    = 1;
+
+		bool isMovingLeft   = false;
+		bool isMovingRight  = false;
 		bool isBulletFiring = false;
-		
-		bool isFRPressed = false; //Framerate pressed
+		bool isFRPressed    = false; //Framerate pressed
 
 
 		//Vectors
 		std::vector<Bullet*> bulletVector;
-		std::vector<Enemy*> enemyVector;
-
+		std::vector<Enemy*>  enemyVector;
+		
 
 		//Mouse vectors
 		sf::Vector2<int> mousePos = sf::Mouse::getPosition(window);
@@ -47,9 +60,8 @@ class Game {
 		Player player;
 		FPSCounter fpsCounter;
 		PlaySound playSound;
-		Bullet bullet;
-		Enemy enemy1, enemy2, enemy3, enemy4;
-
+		Bullet bullet1, bullet2, bullet3, bullet4, bullet5;
+		Enemy enemy1, enemy2;
 
 	public:
 		//Constructors/Destructors

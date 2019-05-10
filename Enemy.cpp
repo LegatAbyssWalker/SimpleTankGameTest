@@ -31,6 +31,14 @@ void Enemy::setEnemyPos(sf::Vector2<float> newPos) {
 	enemy.setPosition(newPos);
 }
 
+int Enemy::getX() {
+	return enemy.getPosition().x;
+}
+
+int Enemy::getY() {
+	return enemy.getPosition().y;
+}
+
 void Enemy::moveTo(int enemySpeed) {
 	enemy.move(enemySpeed, 0);
 }
